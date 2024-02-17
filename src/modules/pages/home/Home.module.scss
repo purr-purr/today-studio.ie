@@ -1,0 +1,48 @@
+.container {
+  @include flex-justify-align(center, center);
+  height: 100%;
+}
+
+.inner {
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.heading {
+  padding-right: 250px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+
+  h1 {
+    font-size: 120px;
+    line-height: 1;
+  }
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.8;
+  position: absolute;
+  top: 50px;
+  right: -360px;
+  transform: translateY(-10px);
+  animation: textAnimation 10s 3s infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+    cursor: crosshair;
+  }
+}
+
+@keyframes textAnimation {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(-480px);
+  }
+}

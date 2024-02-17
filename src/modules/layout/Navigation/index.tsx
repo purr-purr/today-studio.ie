@@ -1,18 +1,30 @@
-import {formatNavigationToPath, NAVIGATION} from "../../../utils/data";
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import cn from 'classnames';
+
 import s from './Navigation.module.scss';
 
 const Navigation = () => {
+	const {pathname} = useRouter();
+	const NAVIGATION: string[] = ['About', 'Projects', 'Contacts'];
+
 	return (
-		<nav className={s.container}>
-			<ul>
-				{NAVIGATION.map((item: string) => (
-					<li>
-						<a href={formatNavigationToPath(item)}>{item}</a>
-					</li>
-				))}
-			</ul>
-		</nav>
+		<ul className={s.container}>
+			{NAVIGATION.map((item: string) => {
+				const navigationPath = `/${item.toLowerCase()}`;
+				const title = item.toUpperCase();
+
+				return <li key={item}>
+					<Link
+						href={navigationPath}
+						className={cn(s.item, navigationPath === pathname && s.current)}
+					>
+						{title}
+					</Link>
+				</li>
+			})}
+		</ul>
 	);
-}
+};
 
 export default Navigation;

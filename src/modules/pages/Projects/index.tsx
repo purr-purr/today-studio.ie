@@ -1,8 +1,10 @@
-const Projects = () => {
+import {FC} from 'react';
+
+import s from './Projects.module.scss';
+
+const Projects: FC = () => {
 	return (
-		<section>
-			Projects Page
-		</section>
+		<div className={s.container}>Projects</div>
 	);
 }
 

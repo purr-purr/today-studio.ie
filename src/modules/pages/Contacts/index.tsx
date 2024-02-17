@@ -1,8 +1,10 @@
-const Contacts = () => {
+import {FC} from 'react';
+
+import s from './Contacts.module.scss';
+
+const Contacts: FC = () => {
 	return (
-		<section>
-			Contacts Page
-		</section>
+		<div className={s.container}>Contacts</div>
 	);
 }
 

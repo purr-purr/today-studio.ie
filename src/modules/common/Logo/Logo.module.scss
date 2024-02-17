@@ -1,0 +1,14 @@
+.container {
+  font-family: 'Neofolia', sans-serif;
+  font-size: 30px;
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  color: var(--primary);
+  transition: color .4s ease-in-out;
+
+  &:hover {
+    color: var(--dark);
+    transition: color .4s ease-in-out;
+  }
+}

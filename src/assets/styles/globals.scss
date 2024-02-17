@@ -1,0 +1,131 @@
+@import "mixins";
+
+:root {
+  --gray: #EFF0F9;
+  --white: #fff;
+  --dark: #222;
+  --primary: #0036C1;
+
+  --blue: #2B5865;
+  --secondary-blue: #8FBDC2;
+  --nude: #F0EDE8;
+  --shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.03);
+}
+
+@font-face {
+  font-family: 'Neofolia';
+  src: url('../fonts/Neofolia.woff2') format('woff2'),
+  url('../fonts/Neofolia.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-button {
+    height: 0;
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-blue);
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: var(--nude);
+  }
+}
+
+#__next {
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--gray);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 300;
+
+  @include media-laptop {
+    font-size: 14px;
+  }
+}
+
+h1, h2 {
+  font-family: 'Neofolia', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+b {
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 500;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::marker,
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+//.layout-container {
+//  max-width: 1500px;
+//  width: 100%;
+//  margin-left: auto;
+//  margin-right: auto;
+//  padding-left: 40px;
+//  padding-right: 40px;
+//
+//  @include media-laptop {
+//    padding-left: 30px;
+//    padding-right: 30px;
+//  }
+//
+//  @include media-tablet {
+//    padding-left: 20px;
+//    padding-right: 20px;
+//  }
+//}
+//

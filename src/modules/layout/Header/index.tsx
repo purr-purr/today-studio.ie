@@ -1,12 +1,15 @@
-import Navigation from "../Navigation";
+import Logo from '@modules/common/Logo';
+import Navigation from '@modules/layout/Navigation';
+
+import s from './Header.module.scss';
 
 const Header = () => {
 	return (
-		<header>
-			header
+		<header className={s.container}>
+			<Logo />
 			<Navigation />
 		</header>
 	);
-}
+};
 
 export default Header;

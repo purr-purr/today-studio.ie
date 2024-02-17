@@ -1,8 +1,10 @@
-const About = () => {
+import {FC} from 'react';
+
+import s from './About.module.scss';
+
+const About: FC = () => {
 	return (
-		<section>
-			About Page
-		</section>
+		<div className={s.container}>about</div>
 	);
 }
 

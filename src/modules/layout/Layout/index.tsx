@@ -1,14 +1,22 @@
-import Header from "../Header";
-import {FC, type ReactNode} from "react";
+import {type ReactNode} from 'react';
 
-const Layout:FC<{children: ReactNode}> = ({children}) => {
+import Header from '@modules/layout/Header';
+
+import s from './Layout.module.scss';
+
+interface IChildrenProps {
+	children: ReactNode;
+}
+
+const Layout = ({children}: IChildrenProps) => {
 	return (
-		<main>
-			layout
-			<Header />
-			{children}
+		<main className={s.container}>
+			<Header/>
+			<section className={s.content}>
+				{children}
+			</section>
 		</main>
 	);
-}
+};
 
 export default Layout;

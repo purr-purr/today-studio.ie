@@ -1,3 +1,36 @@
 .container {
-  background-color: red;
+  list-style-type: none;
+
+  & li {
+    position: fixed;
+
+    &:nth-child(1) {
+      top: 50px;
+      right: 50px;
+    }
+
+    &:nth-child(2) {
+      bottom: 50px;
+      left: 50px;
+    }
+
+    &:nth-child(3) {
+      bottom: 50px;
+      right: 50px;
+    }
+  }
+}
+
+.item {
+  font-family: 'Neofolia', sans-serif;
+  font-size: 30px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: var(--primary);
+  transition: color .4s ease-in-out;
+
+  &:hover, &.current {
+    color: var(--dark);
+    transition: color .4s ease-in-out;
+  }
 }
