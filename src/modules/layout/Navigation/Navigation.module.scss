@@ -1,27 +1,39 @@
 .container {
   list-style-type: none;
 
-  & li {
-    position: fixed;
-
-    &:nth-child(1) {
-      top: 50px;
-      right: 50px;
-    }
-
-    &:nth-child(2) {
-      bottom: 50px;
-      left: 50px;
-    }
-
-    &:nth-child(3) {
-      bottom: 50px;
-      right: 50px;
-    }
+  &.fadeIn li {
+    opacity: 1;
+    transition: opacity .4s ease-in;
   }
 }
 
 .item {
+  position: fixed;
+  z-index: 10;
+  opacity: 0;
+
+  &:nth-child(1) {
+    left: 50px;
+    top: 50px;
+  }
+
+  &:nth-child(2) {
+    top: 50px;
+    right: 50px;
+  }
+
+  &:nth-child(3) {
+    bottom: 50px;
+    left: 50px;
+  }
+
+  &:nth-child(4) {
+    bottom: 50px;
+    right: 50px;
+  }
+}
+
+.link {
   font-family: 'Neofolia', sans-serif;
   font-size: 30px;
   padding-top: 4px;

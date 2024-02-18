@@ -1,46 +1,31 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import Layout from "@modules/layout/Layout";
+import {IS_PRODUCTION} from "@utils/const";
+import * as gtag from "@utils/gtag";
+import type {AppProps} from "next/app";
+import {useRouter} from "next/router";
+import {useEffect} from "react";
+import "@styles/globals.scss";
+import Meta from "@modules/common/Meta";
 
-import Layout from '@modules/layout/Layout';
-
-import { IS_PRODUCTION } from '@utils/const';
-import * as gtag from '@utils/gtag';
-
-import type { AppProps } from 'next/app';
-
-import '@styles/globals.scss';
-import Meta from '@modules/common/Meta';
-
-function App({ Component, pageProps }: AppProps) {
+function App({Component, pageProps}: AppProps) {
 	const router = useRouter();
-	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const handleRouteChange = (url: URL) => {
 			IS_PRODUCTION && gtag.pageview(url);
 		};
-		router.events.on('routeChangeComplete', handleRouteChange);
+		router.events.on("routeChangeComplete", handleRouteChange);
 		return () => {
-			router.events.off('routeChangeComplete', handleRouteChange);
+			router.events.off("routeChangeComplete", handleRouteChange);
 		};
 	}, [router.events]);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 1000);
-	}, []);
-
 	return (
 		<>
-			<Meta isDefault />
-			{loading ? (
-				'Loading'
-			) : (
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-			)}
+			<Meta isDefault/>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</>
 	);
 }

@@ -1,11 +1,12 @@
-import {FC} from 'react';
-
-import s from './Contacts.module.scss';
+import {FC} from "react";
+import s from "./Contacts.module.scss";
 
 const Contacts: FC = () => {
 	return (
-		<div className={s.container}>Contacts</div>
+		<article className={s.container}>
+			contacts
+		</article>
 	);
-}
+};
 
 export default Contacts;
