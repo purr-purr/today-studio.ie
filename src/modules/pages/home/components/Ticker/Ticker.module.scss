@@ -1,0 +1,19 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 2.5;
+  display: inline-block;
+  width: max-content;
+  position: absolute;
+  list-style: none;
+  height: 100px;
+  top: 25px;
+  opacity: 0;
+  transition: all .5s ease-in, opacity .3s ease-in;
+
+  &.fadeIn {
+    opacity: 1;
+    transition: all .5s ease-in, opacity .3s ease-in;
+  }
+}
