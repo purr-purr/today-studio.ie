@@ -16,9 +16,9 @@ const Ticker: FC<{ isFadeIn?: boolean }> = ({isFadeIn}) => {
 
 		if (ticker) {
 			const list = tickerRef.current?.children;
-			const nodesArray = Object.values(list);
+			const nodesArray = list && Object.values(list);
 
-			nodesArray.forEach((item, index) =>
+			nodesArray?.forEach((item, index) =>
 				getNode = index === currentElement
 					? ticker.children[index].cloneNode(true)
 					: getNode);

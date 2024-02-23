@@ -35,7 +35,7 @@ const Drawing = () => {
 		}
 	};
 
-	const reposition = (x, y) => {
+	const reposition = (x: number, y: number) => {
 		const canvas = canvasRef.current;
 		if (canvas) {
 			coords.x = x - canvas.offsetLeft;
@@ -43,7 +43,7 @@ const Drawing = () => {
 		}
 	};
 
-	const start = (x, y) => {
+	const start = (x: number, y: number) => {
 		document.addEventListener("mousemove", draw);
 		reposition(x, y);
 	}
@@ -68,7 +68,7 @@ const Drawing = () => {
 	};
 
 	useEffect(() => {
-		const handleMouseMove = (event) => {
+		const handleMouseMove = (event: MouseEvent) => {
 			start(event.clientX, event.clientY);
 			window.removeEventListener(
 				'mousemove',
