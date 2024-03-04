@@ -2,11 +2,10 @@ export const COMPANY_INFO = {
 	NAME: "Today",
 	TYPE: "Studio",
 	EMAIL: "today-studio@gmail.com",
-	ADDRESS: "Ireland, Co Wexford, Enniscorthy, Y21HD92",
-	ADDRESS_MAP: "",
+	LOCATION: "Co. Wexford, Ireland",
 	MAIN_CONTACT_NUMBER: "+353 85 202 27 38",
-	TELEGRAM: "",
-	WHATSAPP: "",
+	LINKEDIN: "https://www.linkedin.com/company/today-studio-ie/",
+	WHATSAPP: "+353 85 202 27 38",
 };
 
 export const CATCH_WORDS = [

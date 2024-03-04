@@ -38,11 +38,11 @@
   font-size: 30px;
   padding-top: 4px;
   padding-bottom: 4px;
-  color: var(--primary);
+  color: var(--dark);
   transition: color .4s ease-in-out;
 
   &:hover, &.current {
-    color: var(--dark);
+    color: var(--primary);
     transition: color .4s ease-in-out;
   }
 }

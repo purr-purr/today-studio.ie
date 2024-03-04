@@ -87,7 +87,7 @@ p {
   }
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
   font-family: 'Neofolia', sans-serif;
   font-weight: 400;
   line-height: 1.2;
@@ -109,23 +109,3 @@ details > summary::marker,
 details > summary::-webkit-details-marker {
   display: none;
 }
-
-//.layout-container {
-//  max-width: 1500px;
-//  width: 100%;
-//  margin-left: auto;
-//  margin-right: auto;
-//  padding-left: 40px;
-//  padding-right: 40px;
-//
-//  @include media-laptop {
-//    padding-left: 30px;
-//    padding-right: 30px;
-//  }
-//
-//  @include media-tablet {
-//    padding-left: 20px;
-//    padding-right: 20px;
-//  }
-//}
-//

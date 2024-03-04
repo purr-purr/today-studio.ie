@@ -8,7 +8,7 @@ import useLoadingAnimationDelay from "@hooks/useLoadingAnimationDelay";
 const Navigation = () => {
 	const {pathname} = useRouter();
 	const isAnimationFadeIn = useLoadingAnimationDelay();
-	const NAVIGATION: string[] = ["About", "Projects", "Contacts"];
+	const NAVIGATION: string[] = ["Services", "Projects", "Contacts"];
 
 	return (
 		<ul className={cn(s.container, isAnimationFadeIn && s.fadeIn)}>
