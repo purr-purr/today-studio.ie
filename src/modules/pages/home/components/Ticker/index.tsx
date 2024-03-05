@@ -1,10 +1,11 @@
-import {FC, useEffect, useRef, useState} from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
+import cn from 'classnames';
+
+import { CATCH_WORDS, COMPANY_INFO } from '@utils/data';
 
 import s from './Ticker.module.scss';
-import {CATCH_WORDS, COMPANY_INFO} from "@utils/data";
-import cn from "classnames";
 
-const Ticker: FC<{ isFadeIn?: boolean }> = ({isFadeIn}) => {
+const Ticker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 	const tickerRef = useRef<HTMLUListElement | null>(null);
 	const [marginTop, setMarginTop] = useState(-100);
 	const [currentElement, setCurrentElement] = useState(0);
@@ -18,10 +19,13 @@ const Ticker: FC<{ isFadeIn?: boolean }> = ({isFadeIn}) => {
 			const list = tickerRef.current?.children;
 			const nodesArray = list && Object.values(list);
 
-			nodesArray?.forEach((item, index) =>
-				getNode = index === currentElement
-					? ticker.children[index].cloneNode(true)
-					: getNode);
+			nodesArray?.forEach(
+				(item, index) =>
+					(getNode =
+						index === currentElement
+							? ticker.children[index].cloneNode(true)
+							: getNode),
+			);
 
 			getNode && ticker.appendChild(getNode);
 			setMarginTop((prev) => prev - 100);
@@ -45,21 +49,15 @@ const Ticker: FC<{ isFadeIn?: boolean }> = ({isFadeIn}) => {
 		}
 	}, [triggerTicker]);
 
-	const catchWords = [
-		`${COMPANY_INFO.TYPE.toLowerCase()}`,
-		...CATCH_WORDS
-	];
+	const catchWords = [`${COMPANY_INFO.TYPE.toLowerCase()}`, ...CATCH_WORDS];
 
 	return (
-		<ul
-			ref={tickerRef}
-			className={cn(s.container, isFadeIn && s.fadeIn)}
-		>
+		<ul ref={tickerRef} className={cn(s.container, isFadeIn && s.fadeIn)}>
 			{catchWords.map((item: string) => (
 				<li key={item}>{item}</li>
 			))}
 		</ul>
 	);
-}
+};
 
 export default Ticker;

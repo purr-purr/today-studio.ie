@@ -1,0 +1,8 @@
+build
+out
+node_modules
+**/*.html
+**/.git
+**/.svn
+**/.hg
+**/node_modules

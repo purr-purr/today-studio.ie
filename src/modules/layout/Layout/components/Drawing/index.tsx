@@ -1,28 +1,25 @@
-import React, {
-	useEffect,
-	useRef,
-} from "react";
+import { useEffect, useRef } from 'react';
 
-import s from "./Drawing.module.scss";
+import s from './Drawing.module.scss';
 
 const Drawing = () => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-	let coords = {x: 0, y: 0};
+	let coords = { x: 0, y: 0 };
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (canvas) {
-			const ctx = canvas.getContext("2d");
+			const ctx = canvas.getContext('2d');
 			if (ctx) {
 				ctxRef.current = ctx;
 				resizeCanvas();
-				window.addEventListener("resize", resizeCanvas);
+				window.addEventListener('resize', resizeCanvas);
 			}
 		}
 
 		return () => {
-			window.removeEventListener("resize", resizeCanvas);
+			window.removeEventListener('resize', resizeCanvas);
 		};
 	}, []);
 
@@ -44,12 +41,12 @@ const Drawing = () => {
 	};
 
 	const start = (x: number, y: number) => {
-		document.addEventListener("mousemove", draw);
+		document.addEventListener('mousemove', draw);
 		reposition(x, y);
-	}
+	};
 
 	const stop = () => {
-		document.removeEventListener("mousemove", draw);
+		document.removeEventListener('mousemove', draw);
 	};
 
 	const draw = (event: MouseEvent) => {
@@ -58,8 +55,8 @@ const Drawing = () => {
 			event.preventDefault();
 			ctx.beginPath();
 			ctx.lineWidth = 0.2;
-			ctx.lineCap = "round";
-			ctx.strokeStyle = "#0036C1";
+			ctx.lineCap = 'round';
+			ctx.strokeStyle = '#0036C1';
 			ctx.moveTo(coords.x, coords.y);
 			reposition(event.clientX, event.clientY);
 			ctx.lineTo(coords.x, coords.y);
@@ -70,10 +67,7 @@ const Drawing = () => {
 	useEffect(() => {
 		const handleMouseMove = (event: MouseEvent) => {
 			start(event.clientX, event.clientY);
-			window.removeEventListener(
-				'mousemove',
-				handleMouseMove
-			);
+			window.removeEventListener('mousemove', handleMouseMove);
 		};
 
 		window.addEventListener('mousemove', handleMouseMove);
@@ -82,7 +76,6 @@ const Drawing = () => {
 			stop();
 		};
 	}, []);
-
 
 	// useEffect(() => {
 	// 	const handleScroll = () => {
@@ -96,12 +89,7 @@ const Drawing = () => {
 	// 	};
 	// }, []);
 
-	return (
-		<canvas
-			ref={canvasRef}
-			className={s.container}
-		/>
-	);
+	return <canvas ref={canvasRef} className={s.container} />;
 };
 
 export default Drawing;

@@ -1,10 +1,12 @@
-import {FC, useEffect, useState} from "react";
-import {COMPANY_INFO} from "@utils/data";
-import Ticker from "@modules/pages/home/components/Ticker";
+import { FC, useEffect, useState } from 'react';
+import cn from 'classnames';
 
-import s from "./Home.module.scss";
-import cn from "classnames";
-import useLoadingAnimationDelay from "@hooks/useLoadingAnimationDelay";
+import Ticker from '@modules/pages/home/components/Ticker';
+
+import useLoadingAnimationDelay from '@hooks/useLoadingAnimationDelay';
+import { COMPANY_INFO } from '@utils/data';
+
+import s from './Home.module.scss';
 
 const Home: FC = () => {
 	const [isHeadingFadeRight, setIsHeadingFadeRight] = useState(false);
@@ -15,7 +17,7 @@ const Home: FC = () => {
 		setTimeout(() => {
 			setTickerFadeIn(true);
 		}, 500);
-	}
+	};
 
 	useEffect(() => {
 		const timeoutId = setTimeout(() => {
@@ -34,7 +36,7 @@ const Home: FC = () => {
 						{COMPANY_INFO.NAME.toUpperCase()}
 					</h1>
 
-					<Ticker isFadeIn={tickerFadeIn}/>
+					<Ticker isFadeIn={tickerFadeIn} />
 				</div>
 			</div>
 		</article>

@@ -1,19 +1,19 @@
 .container {
-  text-transform: uppercase;
+	text-transform: uppercase;
 
-  &--dark {
-    color: var(--dark);
-  }
+	&--dark {
+		color: var(--dark);
+	}
 
-  &--primary {
-    color: var(--primary);
-  }
+	&--primary {
+		color: var(--primary);
+	}
 
-  &--small {
-    font-size: 24px;
-  }
+	&--small {
+		font-size: 24px;
+	}
 
-  &--large {
-    font-size: 80px;
-  }
+	&--large {
+		font-size: 80px;
+	}
 }

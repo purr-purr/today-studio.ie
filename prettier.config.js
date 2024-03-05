@@ -1,6 +1,5 @@
-module.exports = {
-	sortingMethod: 'lineLength',
-	plugins: ['./node_modules/prettier-plugin-sort-imports/dist/index.js'],
+/** @type {import("prettier").Config} */
+const config = {
 	printWidth: 80,
 	useTabs: true,
 	tabWidth: 1,
@@ -8,6 +7,7 @@ module.exports = {
 	bracketSpacing: true,
 	trailingComma: 'all',
 	semi: true,
+	plugins: ['@ianvs/prettier-plugin-sort-imports'],
 	importOrder: [
 		'^react',
 		'^next',
@@ -32,11 +32,8 @@ module.exports = {
 		'^[./]',
 		'',
 	],
-	importOrderBuiltinModulesToTop: true,
-	importOrderCaseInsensitive: true,
 	importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-	importOrderMergeDuplicateImports: true,
-	// importOrderCombineTypeAndValueImports: true,
-	importOrderSeparation: false,
-	importOrderSortSpecifiers: true,
+	importOrderTypeScriptVersion: '5.0.0',
 };
+
+export default config;

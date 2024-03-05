@@ -1,8 +1,8 @@
-import {useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const useLoadingAnimationDelay = () => {
-	const {pathname} = useRouter();
+	const { pathname } = useRouter();
 	const [isAnimationStarting, setIsAnimationStarting] = useState(false);
 
 	useEffect(() => {

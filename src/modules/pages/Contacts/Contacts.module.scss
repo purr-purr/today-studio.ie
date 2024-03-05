@@ -1,31 +1,26 @@
 .container {
-  position: inherit;
-  z-index: 2;
+	position: inherit;
+	z-index: 2;
 }
 
 .heading {
-  margin-bottom: 216px;
+	margin-bottom: 216px;
 }
 
 .description {
-  font-size: 24px;
+	font-size: 24px;
 }
 
 .contacts {
-  width: 50%;
-  margin-left: auto;
-  margin-top: 40px;
+	width: 50%;
+	margin-left: auto;
+	margin-top: 40px;
 
-  &List {
-    display: flex;
-    gap: 20px;
-    margin-top: 40px;
-    list-style-type: none;
-    margin-bottom: 40px;
-  }
-
-  &Location {
-    color: var(--primary);
-    font-weight: 400;
-  }
+	&List {
+		display: flex;
+		gap: 20px;
+		margin-top: 40px;
+		list-style-type: none;
+		margin-bottom: 40px;
+	}
 }

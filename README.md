@@ -44,4 +44,3 @@ UI/UX Design -
 
 - [LinkedIn](https://www.linkedin.com/in/alina-huz-design/)
 - [Email](mailto:alina.huz.design@gmail.com)
-
