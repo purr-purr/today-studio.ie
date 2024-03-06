@@ -1,91 +1,87 @@
 @import 'mixins';
+@import 'variables';
 
 :root {
-	--gray: #eff0f9;
-	--white: #fff;
-	--dark: #222;
-	--primary: #0036c1;
+  --small: 14px;
+  --medium: 16px;
+  --large: 24px;
 
-	--blue: #2b5865;
-	--secondary-blue: #8fbdc2;
-	--nude: #f0ede8;
-	--shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.03);
+  @include media($tablet-bp) {
+    --small: 12px;
+    --medium: 14px;
+    --large: 18px;
+  }
 }
 
 @font-face {
-	font-family: 'Neofolia';
-	src:
-		url('../fonts/Neofolia.woff2') format('woff2'),
-		url('../fonts/Neofolia.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Neofolia';
+  src: url('../fonts/Neofolia.woff2') format('woff2'),
+  url('../fonts/Neofolia.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 
-	&::-webkit-scrollbar {
-		width: 8px;
-		height: 8px;
-	}
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
-	&::-webkit-scrollbar-button {
-		height: 0;
-		width: 100%;
-	}
+  &::-webkit-scrollbar-button {
+    height: 0;
+    width: 100%;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: var(--secondary-blue);
-		border-radius: 50px;
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: $dark;
+    border-radius: 50px;
+  }
 
-	&::-webkit-scrollbar-track-piece {
-		background-color: var(--nude);
-	}
+  &::-webkit-scrollbar-track-piece {
+    background-color: $gray;
+  }
 }
 
 #__next {
-	height: 100%;
+  height: 100%;
 }
 
 html {
-	overflow-x: hidden;
-	--scroll-behavior: smooth;
-	scroll-behavior: smooth;
+  overflow-x: hidden;
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-	height: 100%;
-	background-color: var(--gray);
+  height: 100%;
+  background-color: $gray;
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	color: var(--dark);
+  @include font(Montserrat);
+  color: $dark;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-	font-family: 'Montserrat', sans-serif;
-	cursor: pointer;
-	line-height: 1.2;
+  @include font(Montserrat);
+  cursor: pointer;
+  line-height: 1.2;
 }
 
 p {
-	font-size: 16px;
-	line-height: 1.2;
-	font-weight: 300;
-
-	@include media-laptop {
-		font-size: 14px;
-	}
+  font-size: var(--medium);
+  line-height: 1.2;
+  font-weight: 300;
 }
 
 h1,
@@ -93,24 +89,24 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: 'Neofolia', sans-serif;
-	font-weight: 400;
-	line-height: 1.2;
+  @include font(Neofolia);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 b {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 strong {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 details > summary {
-	list-style: none;
+  list-style: none;
 }
 
 details > summary::marker,
 details > summary::-webkit-details-marker {
-	display: none;
+  display: none;
 }

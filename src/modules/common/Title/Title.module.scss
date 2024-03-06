@@ -2,11 +2,11 @@
 	text-transform: uppercase;
 
 	&--dark {
-		color: var(--dark);
+		color: $dark;
 	}
 
 	&--primary {
-		color: var(--primary);
+		color: $primary;
 	}
 
 	&--small {

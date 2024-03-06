@@ -1,48 +1,43 @@
 .container {
-	position: inherit;
-	z-index: 2;
+  position: inherit;
+  z-index: 2;
 }
 
 .description {
-	max-width: 758px;
-	width: 100%;
-	margin-top: 80px;
-	margin-bottom: 174px;
-	font-size: 24px;
-	text-align: justify;
+  max-width: 758px;
+  width: 100%;
+  margin-top: 80px;
+  margin-bottom: 174px;
+  font-size: 24px;
+  text-align: justify;
 }
 
 .services {
-	@include flex-justify(center);
-	gap: 24px;
+  @include flex($justify: center, $gap: 24px);
 }
 
 .servicesList {
-	text-align: justify;
-	font-weight: 300;
-	list-style-type: none;
-	margin-top: 6px;
-	min-width: 401px;
+  text-align: justify;
+  font-weight: 300;
+  list-style-type: none;
+  margin-top: 6px;
+  min-width: 401px;
 
-	& li {
-		position: relative;
-		padding-left: 14px;
-
-		&:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 8px;
-			width: 3px;
-			height: 3px;
-			border-radius: 50%;
-			background-color: var(--dark);
-		}
-	}
+  & li {
+    padding-left: 14px;
+    @include pseudo() {
+      left: 0;
+      top: 8px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: $dark;
+    }
+  }
 }
 
 .servicesDescription {
-	max-width: 622px;
-	width: 100%;
-	text-align: justify;
+  max-width: 622px;
+  width: 100%;
+  text-align: justify;
 }

@@ -1,11 +1,11 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import {FC, useEffect, useRef, useState} from 'react';
 import cn from 'classnames';
 
-import { CATCH_WORDS, COMPANY_INFO } from '@utils/data';
+import {CATCH_WORDS, COMPANY_INFO} from '@utils/data';
 
-import s from './Ticker.module.scss';
+import s from './HomeTicker.module.scss';
 
-const Ticker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
+const HomeTicker: FC<{ isFadeIn?: boolean }> = ({isFadeIn}) => {
 	const tickerRef = useRef<HTMLUListElement | null>(null);
 	const [marginTop, setMarginTop] = useState(-100);
 	const [currentElement, setCurrentElement] = useState(0);
@@ -60,4 +60,4 @@ const Ticker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 	);
 };
 
-export default Ticker;
+export default HomeTicker;
