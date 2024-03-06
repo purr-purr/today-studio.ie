@@ -2,86 +2,87 @@
 @import 'variables';
 
 :root {
-  --small: 14px;
-  --medium: 16px;
-  --large: 24px;
+	--small: 14px;
+	--medium: 16px;
+	--large: 24px;
 
-  @include media($tablet-bp) {
-    --small: 12px;
-    --medium: 14px;
-    --large: 18px;
-  }
+	@include media($tablet-bp) {
+		--small: 12px;
+		--medium: 14px;
+		--large: 18px;
+	}
 }
 
 @font-face {
-  font-family: 'Neofolia';
-  src: url('../fonts/Neofolia.woff2') format('woff2'),
-  url('../fonts/Neofolia.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Neofolia';
+	src:
+		url('../fonts/Neofolia.woff2') format('woff2'),
+		url('../fonts/Neofolia.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
 
-  &::-webkit-scrollbar-button {
-    height: 0;
-    width: 100%;
-  }
+	&::-webkit-scrollbar-button {
+		height: 0;
+		width: 100%;
+	}
 
-  &::-webkit-scrollbar-thumb {
-    background-color: $dark;
-    border-radius: 50px;
-  }
+	&::-webkit-scrollbar-thumb {
+		background-color: $dark;
+		border-radius: 50px;
+	}
 
-  &::-webkit-scrollbar-track-piece {
-    background-color: $gray;
-  }
+	&::-webkit-scrollbar-track-piece {
+		background-color: $gray;
+	}
 }
 
 #__next {
-  height: 100%;
+	height: 100%;
 }
 
 html {
-  overflow-x: hidden;
-  --scroll-behavior: smooth;
-  scroll-behavior: smooth;
+	overflow-x: hidden;
+	--scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 html,
 body {
-  height: 100%;
-  background-color: $gray;
+	height: 100%;
+	background-color: $gray;
 }
 
 body {
-  @include font(Montserrat);
-  color: $dark;
+	@include font(Montserrat);
+	color: $dark;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 button {
-  @include font(Montserrat);
-  cursor: pointer;
-  line-height: 1.2;
+	@include font(Montserrat);
+	cursor: pointer;
+	line-height: 1.2;
 }
 
 p {
-  font-size: var(--medium);
-  line-height: 1.2;
-  font-weight: 300;
+	font-size: var(--medium);
+	line-height: 1.2;
+	font-weight: 300;
 }
 
 h1,
@@ -89,24 +90,24 @@ h2,
 h3,
 h4,
 h5 {
-  @include font(Neofolia);
-  font-weight: 400;
-  line-height: 1.2;
+	@include font(Neofolia);
+	font-weight: 400;
+	line-height: 1.2;
 }
 
 b {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 strong {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 details > summary {
-  list-style: none;
+	list-style: none;
 }
 
 details > summary::marker,
 details > summary::-webkit-details-marker {
-  display: none;
+	display: none;
 }

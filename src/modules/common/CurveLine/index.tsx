@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import s from './CurveLine.module.scss';
 
@@ -38,7 +38,7 @@ const CurveLine = () => {
 
 	const manageMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		if (e.target instanceof HTMLDivElement) {
-			const {movementY, clientX} = e;
+			const { movementY, clientX } = e;
 			const left = pathElement.current?.getBoundingClientRect().left || 0;
 			const width = pathElement.current?.getBoundingClientRect().width || 1000;
 			x = (clientX - left) / width;
@@ -77,7 +77,7 @@ const CurveLine = () => {
 				className={s.box}
 			/>
 			<svg>
-				<path ref={pathElement}/>
+				<path ref={pathElement} />
 			</svg>
 		</div>
 	);

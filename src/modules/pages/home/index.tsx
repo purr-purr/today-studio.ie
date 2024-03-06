@@ -1,10 +1,10 @@
-import {FC, useEffect, useState} from 'react';
+import { FC, useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import HomeTicker from '@modules/pages/home/components/HomeTicker';
 
 import useLoadingAnimationDelay from '@hooks/useLoadingAnimationDelay';
-import {COMPANY_INFO} from '@utils/data';
+import { COMPANY_INFO } from '@utils/data';
 
 import s from './Home.module.scss';
 
@@ -36,7 +36,7 @@ const Home: FC = () => {
 						{COMPANY_INFO.NAME.toUpperCase()}
 					</h1>
 
-					<HomeTicker isFadeIn={tickerFadeIn}/>
+					<HomeTicker isFadeIn={tickerFadeIn} />
 				</div>
 			</div>
 		</article>

@@ -1,13 +1,13 @@
-import {Head, Html, Main, NextScript} from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
-import {IS_PRODUCTION} from '@utils/const';
-import {GA_TRACKING_ID} from '@utils/credentials';
+import { IS_PRODUCTION } from '@utils/const';
+import { GA_TRACKING_ID } from '@utils/credentials';
 
 export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
-				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
@@ -39,8 +39,8 @@ export default function Document() {
 				)}
 			</Head>
 			<body>
-			<Main/>
-			<NextScript/>
+				<Main />
+				<NextScript />
 			</body>
 		</Html>
 	);

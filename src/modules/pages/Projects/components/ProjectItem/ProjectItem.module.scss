@@ -1,43 +1,40 @@
 .container {
-  //border-top: 2px solid $primary;
+	//border-top: 2px solid $primary;
 
-
-  //&:last-of-type {
-  //  border-bottom: 2px solid $primary;
-  //}
+	//&:last-of-type {
+	//  border-bottom: 2px solid $primary;
+	//}
 }
 
 .link {
-  @include flex(center, center);
-  padding-block: 18px;
+	@include flex(center, center);
+	padding-block: 18px;
 
-  & p {
-    @include font(Neofolia);
-    font-size: 80px;
-    color: $dark;
-    text-transform: uppercase;
+	& p {
+		@include font(Neofolia);
+		font-size: 80px;
+		color: $dark;
+		text-transform: uppercase;
 
-    &:first-of-type {
-      margin-right: 4px;
-    }
+		&:first-of-type {
+			margin-right: 4px;
+		}
 
-    &:last-of-type {
-      margin-left: 4px;
-    }
-  }
+		&:last-of-type {
+			margin-left: 4px;
+		}
+	}
 }
 
 .poster {
-  @include flex($justify: center);
-  overflow: hidden;
-  width: 0;
+	@include flex($justify: center);
+	overflow: hidden;
+	width: 0;
 
-  &Image {
-    display: block;
-    width: 210px;
-    height: auto;
-    min-width: 210px;
-  }
+	&Image {
+		display: block;
+		width: 210px;
+		height: auto;
+		min-width: 210px;
+	}
 }
-
-

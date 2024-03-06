@@ -1,47 +1,49 @@
-@use "sass:list";
+@use 'sass:list';
 
 @mixin media($breakpoint, $direction: max) {
-  $local-breakpoint: $breakpoint;
+	$local-breakpoint: $breakpoint;
 
-  @if $direction == min {
-    $local-breakpoint: $breakpoint + 1;
-  }
+	@if $direction == min {
+		$local-breakpoint: $breakpoint + 1;
+	}
 
-  @media only screen and (#{$direction}-width: $local-breakpoint) {
-    @content;
-  }
+	@media only screen and (#{$direction}-width: $local-breakpoint) {
+		@content;
+	}
 }
 
 @mixin flex($align: null, $justify: null, $gap: null) {
-  display: flex;
+	display: flex;
 
-  @if $align != null {
-    align-items: $align;
-  }
+	@if $align != null {
+		align-items: $align;
+	}
 
-  @if $justify != null {
-    justify-content: $justify;
-  }
+	@if $justify != null {
+		justify-content: $justify;
+	}
 
-  @if $gap != null {
-    gap: $gap;
-  }
+	@if $gap != null {
+		gap: $gap;
+	}
 }
 
 @mixin pseudo($location: before) {
-  position: relative;
+	position: relative;
 
-  &::#{$location} {
-    content: '';
-    position: absolute;
-    @content;
-  }
+	&::#{$location} {
+		content: '';
+		position: absolute;
+		@content;
+	}
 }
 
 @mixin font($font) {
-  @if not list.index($fonts-list, $font) {
-    @error "#{$font} is not a valid font name. Expected one of #{$fonts-list}.";
-  }
+	@if not list.index($fonts-list, $font) {
+		@error "#{$font} is not a valid font name. Expected one of #{$fonts-list}.";
+	}
 
-  font-family: #{$font}, sans-serif;
+	font-family:
+		#{$font},
+		sans-serif;
 }
