@@ -4,7 +4,7 @@ import CurveLine from '@modules/common/CurveLine';
 import ProjectItem from '@modules/pages/projects/components/ProjectItem';
 
 import s from './Projects.module.scss';
-import type IProjectsList from "@modules/pages/projects/projects.interface";
+import type {IProjectsList} from "@modules/pages/projects/interface";
 
 const Projects: FC = () => {
 	const projects: IProjectsList[] = [
