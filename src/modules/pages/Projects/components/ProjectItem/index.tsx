@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {motion} from 'framer-motion';
 
-import type IProjectsList from '@modules/pages/projects/projects.interface.tsx';
-
 import s from './ProjectItem.module.scss';
+
+import type IProjectsList from "@modules/pages/projects/projects.interface";
 
 const animation = {
 	initial: {width: 0},

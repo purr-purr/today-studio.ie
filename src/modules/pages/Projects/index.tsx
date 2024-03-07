@@ -2,9 +2,9 @@ import {FC} from 'react';
 
 import CurveLine from '@modules/common/CurveLine';
 import ProjectItem from '@modules/pages/projects/components/ProjectItem';
-import type IProjectsList from '@modules/pages/projects/projects.interface.tsx';
 
 import s from './Projects.module.scss';
+import type IProjectsList from "@modules/pages/projects/projects.interface";
 
 const Projects: FC = () => {
 	const projects: IProjectsList[] = [
