@@ -1,29 +1,27 @@
-import {FC, useEffect, useState} from 'react';
+import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
+
+import type { IProjectsList } from '@modules/pages/projects/interface';
 
 import s from './ProjectItem.module.scss';
-import type {IProjectsList} from "@modules/pages/projects/interface";
 
-const animation = {
-	initial: {width: 0},
-	open: {
-		width: 'auto',
-		transition: {duration: 0.4, ease: [0.23, 1, 0.32, 1]},
-	},
-	closed: {width: 0},
-};
-
-const ProjectItem: FC<{ project: IProjectsList }> = ({project}) => {
+const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 	const [isActive, setIsActive] = useState<boolean>(false);
+
 	const getPosterPath = (path: string) => {
 		return require(`@modules/pages/projects/assets/${path}.jpg`).default;
 	};
 
-	useEffect(() => {
-		console.log(isActive, project.title1);
-	}, [isActive]);
+	const animation = {
+		initial: { width: 0 },
+		open: {
+			width: 'auto',
+			transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] },
+		},
+		closed: { width: 0 },
+	};
 
 	return (
 		<li

@@ -77,18 +77,6 @@ const Drawing = () => {
 		};
 	}, []);
 
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		console.log('Page was scrolled');
-	// 	};
-	//
-	// 	window.addEventListener('scroll', handleScroll);
-	//
-	// 	return () => {
-	// 		window.removeEventListener('scroll', handleScroll);
-	// 	};
-	// }, []);
-
 	return <canvas ref={canvasRef} className={s.container} />;
 };
 

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 import Header from '@modules/layout/Header';
 import Drawing from '@modules/layout/Layout/components/Drawing';
@@ -13,10 +13,8 @@ const Layout = ({ children }: IChildrenProps) => {
 	return (
 		<main className={s.container}>
 			<Header />
-			<section className={s.content}>
-				{children}
-				<Drawing />
-			</section>
+			<section className={s.content}>{children}</section>
+			<Drawing />
 		</main>
 	);
 };

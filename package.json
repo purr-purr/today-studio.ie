@@ -5,7 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "next dev",
-		"start": "next start -p 4400",
+		"dev:prettier": "npx prettier . --write && next dev",
+		"start": "next start",
 		"build": "next build",
 		"build:export": "next build && next export",
 		"lint": "next lint",
