@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
 import CurveLine from '@modules/common/CurveLine';
 import ProjectItem from '@modules/pages/projects/components/ProjectItem';
-import IProjectsList from '@modules/pages/projects/projects.interface.ts';
+import type IProjectsList from '@modules/pages/projects/projects.interface.tsx';
 
 import s from './Projects.module.scss';
 
@@ -94,8 +94,8 @@ const Projects: FC = () => {
 					(project) =>
 						project.isVisible && (
 							<>
-								<ProjectItem key={project.title1} project={project} />
-								<CurveLine />
+								<ProjectItem key={project.title1} project={project}/>
+								<CurveLine/>
 							</>
 						),
 				)}
