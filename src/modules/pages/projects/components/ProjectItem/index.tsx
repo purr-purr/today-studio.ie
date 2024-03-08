@@ -1,6 +1,7 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import cn from 'classnames';
 import { motion } from 'framer-motion';
 
 import type { IProjectsList } from '@modules/pages/projects/interface';
@@ -34,7 +35,14 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 			className={s.container}
 		>
 			<Link href={project.link} className={s.link}>
-				<p>{project.title1}</p>
+				<p
+					className={cn(
+						s.title,
+						project.isWithSeparator && !isActive && s[`title--active`],
+					)}
+				>
+					{project.titleFirstPart}
+				</p>
 				<motion.div
 					variants={animation}
 					animate={isActive ? 'open' : 'closed'}
@@ -43,10 +51,10 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 					<Image
 						className={s.posterImage}
 						alt="Poster"
-						src={getPosterPath(project.posterPath)}
+						src={getPosterPath(project.titleFirstPart)}
 					/>
 				</motion.div>
-				<p>{project.title2}</p>
+				<p className={s.title}>{project.titleLastPart}</p>
 			</Link>
 		</li>
 	);

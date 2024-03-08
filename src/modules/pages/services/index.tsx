@@ -11,14 +11,10 @@ const Services: FC = () => {
 		' to transforming your ideas into captivating digital experiences.';
 	const servicesTitle = 'Services';
 	const servicesList = [
-		'Built-for-you websites',
-		'Personalised design & copy',
-		'Fast loading to rank high on Google',
-		'Secure hosting & SSL certificate',
-		'Easy-to-use data editor',
-		'1-to-1 launch & training call',
-		'Custom domain name',
-		'Unlimited edits for 30 days post launch',
+		'Turn-key website development',
+		'Crafting Unique design',
+		'Adjustment, launching, and management of your website',
+		'Research of user needs for your business',
 	];
 
 	return (

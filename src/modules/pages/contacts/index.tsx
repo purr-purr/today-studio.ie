@@ -9,7 +9,7 @@ import { COMPANY_INFO } from '@utils/data';
 import s from './Contacts.module.scss';
 
 const Contacts: FC = () => {
-	const pageTitle = "Let's Connect today";
+	const pageTitle = "Let's talk today";
 	const pageDescription =
 		"Get in touch to kickstart your digital journey. Let's build something remarkable together!";
 	const contactsList = [

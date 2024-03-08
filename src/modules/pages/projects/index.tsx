@@ -1,10 +1,11 @@
-import {FC, Fragment} from 'react';
+import { FC, Fragment } from 'react';
 
 import CurveLine from '@modules/common/CurveLine';
 import ProjectItem from '@modules/pages/projects/components/ProjectItem';
-import type {IProjectsList} from '@modules/pages/projects/interface';
 
-import {PROJECTS} from '@utils/data';
+import { PROJECTS } from '@utils/data';
+
+import type { IProjectsList } from '@modules/pages/projects/interface';
 
 import s from './Projects.module.scss';
 
@@ -18,9 +19,11 @@ const Projects: FC = () => {
 				{PROJECTS.map(
 					(project: IProjectsList) =>
 						project.isVisible && (
-							<Fragment key={project.title1}>
+							<Fragment key={project.titleFirstPart}>
 								<ProjectItem project={project} />
-								<CurveLine />
+								<li>
+									<CurveLine />
+								</li>
 							</Fragment>
 						),
 				)}

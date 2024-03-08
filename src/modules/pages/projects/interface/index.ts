@@ -1,7 +1,7 @@
 export interface IProjectsList {
 	isVisible: boolean;
-	title1: string;
-	title2: string;
+	isWithSeparator: boolean;
+	titleFirstPart: string;
+	titleLastPart: string;
 	link: string;
-	posterPath: string;
 }

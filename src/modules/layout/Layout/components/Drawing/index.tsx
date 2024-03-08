@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 
 import s from './Drawing.module.scss';
 
 const Drawing = () => {
+	const router = useRouter();
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
 	let coords = { x: 0, y: 0 };
@@ -21,7 +23,7 @@ const Drawing = () => {
 		return () => {
 			window.removeEventListener('resize', resizeCanvas);
 		};
-	}, []);
+	}, [router.pathname]);
 
 	const resizeCanvas = () => {
 		const canvas = canvasRef.current;

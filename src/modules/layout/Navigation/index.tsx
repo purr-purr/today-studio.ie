@@ -20,7 +20,7 @@ const Navigation = () => {
 			</li>
 			{NAVIGATION.map((item: string) => {
 				const navigationPath = `/${item.toLowerCase()}`;
-				const title = item.toUpperCase();
+				const title = item === 'Contacts' ? `LET'S TALK` : item.toUpperCase();
 
 				return (
 					<li key={item} className={s.item}>
