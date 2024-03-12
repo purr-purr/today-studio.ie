@@ -6,7 +6,7 @@
 	--medium: 16px;
 	--large: 24px;
 
-	@include media($tablet-bp) {
+	@include media($mobile-bp) {
 		--small: 12px;
 		--medium: 14px;
 		--large: 18px;

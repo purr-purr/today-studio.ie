@@ -1,12 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
+import { useMediaQuery } from '@hooks/index';
+
 import s from './Drawing.module.scss';
 
 const Drawing = () => {
 	const router = useRouter();
+	const isLargeScreen = useMediaQuery(1900);
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+	const lineWidth = isLargeScreen ? 0.5 : 0.2;
 	let coords = { x: 0, y: 0 };
 
 	useEffect(() => {
@@ -56,7 +60,7 @@ const Drawing = () => {
 		if (ctx) {
 			event.preventDefault();
 			ctx.beginPath();
-			ctx.lineWidth = 0.2;
+			ctx.lineWidth = lineWidth;
 			ctx.lineCap = 'round';
 			ctx.strokeStyle = '#0036C1';
 			ctx.moveTo(coords.x, coords.y);

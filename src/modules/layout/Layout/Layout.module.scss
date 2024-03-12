@@ -1,8 +1,13 @@
 .container {
 	min-height: 100vh;
 	height: 100%;
-	cursor: url('./assets/cursor.svg'), auto;
 	position: relative;
+
+	@include media($mobile-bp, min) {
+		cursor:
+			url('./assets/cursor.svg') 3 3,
+			auto;
+	}
 }
 
 .content {
@@ -10,4 +15,10 @@
 	height: 100%;
 	padding: 140px 40px;
 	overflow: auto;
+
+	@include media($mobile-bp) {
+		@include flex($justify: center);
+		flex-direction: column;
+		padding: 75px 16px;
+	}
 }

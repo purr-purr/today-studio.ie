@@ -11,9 +11,17 @@
 
 	&--small {
 		font-size: 24px;
+
+		@include media($mobile-bp) {
+			font-size: 18px;
+		}
 	}
 
 	&--large {
 		font-size: 80px;
+
+		@include media($mobile-bp) {
+			font-size: 36px;
+		}
 	}
 }

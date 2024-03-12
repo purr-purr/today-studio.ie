@@ -27,7 +27,7 @@ function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<>
-			<Meta isDefault />
+			<Meta />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>

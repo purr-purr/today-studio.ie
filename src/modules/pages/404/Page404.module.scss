@@ -13,7 +13,7 @@
 	font-weight: 700;
 	font-variant: lining-nums;
 
-	@include media($tablet-bp) {
+	@include media($mobile-bp) {
 		font-size: 100px;
 		gap: 16px;
 	}

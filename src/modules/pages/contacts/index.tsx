@@ -23,16 +23,16 @@ const Contacts: FC = () => {
 
 			<CurveLine />
 
-			<aside className={s.contacts}>
+			<div className={s.links}>
 				<p className={s.description}>{pageDescription}</p>
-				<ul className={s.contactsList}>
+				<ul className={s.linksList}>
 					{contactsList.map((item) => (
 						<li key={item.link}>
 							<Link href={item.link} title={item.title} />
 						</li>
 					))}
 				</ul>
-			</aside>
+			</div>
 		</article>
 	);
 };

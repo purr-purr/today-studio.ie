@@ -6,22 +6,45 @@
 .description {
 	max-width: 758px;
 	width: 100%;
-	margin-top: 80px;
-	margin-bottom: 174px;
-	font-size: 24px;
+	margin-block: 80px 174px;
+	font-size: var(--large);
 	text-align: justify;
+
+	@include media($mobile-bp) {
+		margin-block: 40px;
+		max-width: unset;
+	}
 }
 
-.services {
-	@include flex($justify: center, $gap: 24px);
+.offer {
+	@include flex($justify: center, $gap: 40px);
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+	}
+
+	&Description {
+		max-width: 622px;
+		width: 100%;
+		text-align: justify;
+
+		@include media($mobile-bp) {
+			max-width: unset;
+		}
+	}
 }
 
-.servicesList {
+.offerList {
 	text-align: justify;
 	font-weight: 300;
 	list-style-type: none;
 	margin-top: 6px;
 	min-width: 401px;
+	font-size: var(--medium);
+
+	@include media($mobile-bp) {
+		min-width: unset;
+	}
 
 	& li {
 		padding-left: 14px;
@@ -34,10 +57,4 @@
 			background-color: $dark;
 		}
 	}
-}
-
-.servicesDescription {
-	max-width: 622px;
-	width: 100%;
-	text-align: justify;
 }

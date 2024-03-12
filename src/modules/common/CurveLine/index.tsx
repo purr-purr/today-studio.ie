@@ -5,7 +5,11 @@ import React, { useEffect, useRef } from 'react';
 import s from './CurveLine.module.scss';
 
 interface ISvgPathElement {
-	setAttributeNS(namespaceURI: null, qualifiedName: string, value: string): void;
+	setAttributeNS(
+		namespaceURI: null,
+		qualifiedName: string,
+		value: string,
+	): void;
 }
 
 const CurveLine = () => {
