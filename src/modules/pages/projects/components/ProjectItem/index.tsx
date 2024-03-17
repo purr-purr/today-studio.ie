@@ -1,14 +1,17 @@
-import { FC, useState } from 'react';
+import {FC, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import cn from 'classnames';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
-import type { IProjectsList } from '@modules/pages/projects/interface';
+import type {IProjectsList} from '@modules/pages/projects/interface';
 
 import s from './ProjectItem.module.scss';
+import {useMediaQuery} from "@hooks/index";
+import {MOBILE_BREAKPOINT} from "@utils/const";
 
 const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
 	const [isActive, setIsActive] = useState<boolean>(false);
 
 	const getPosterPath = (path: string) => {
@@ -26,34 +29,36 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 
 	return (
 		<li
-			onMouseEnter={() => {
-				setIsActive(true);
-			}}
-			onMouseLeave={() => {
-				setIsActive(false);
-			}}
+			onMouseEnter={() =>
+				!isActive && setIsActive(true)
+			}
+			onMouseLeave={() =>
+				!isActive && setIsActive(false)
+			}
 			className={s.container}
 		>
 			<Link href={project.link} className={s.link}>
 				<p
 					className={cn(
 						s.title,
-						project.isWithSeparator && !isActive && s[`title--active`],
+						project.isWithSeparator && !isActive && s[`title--separator`],
 					)}
 				>
 					{project.titleFirstPart}
 				</p>
-				<motion.div
-					variants={animation}
-					animate={isActive ? 'open' : 'closed'}
-					className={s.poster}
-				>
-					<Image
-						className={s.posterImage}
-						alt="Poster"
-						src={getPosterPath(project.titleFirstPart)}
-					/>
-				</motion.div>
+				{!isMobile && (
+					<motion.div
+						variants={animation}
+						animate={isActive ? 'open' : 'closed'}
+						className={s.poster}
+					>
+						<Image
+							className={s.posterImage}
+							alt="Poster"
+							src={getPosterPath(project.titleFirstPart)}
+						/>
+					</motion.div>
+				)}
 				<p className={s.title}>{project.titleLastPart}</p>
 			</Link>
 		</li>

@@ -1,29 +1,33 @@
-import { FC, Fragment } from 'react';
+import {FC, Fragment} from 'react';
 
-import CurveLine from '@modules/common/CurveLine';
 import ProjectItem from '@modules/pages/projects/components/ProjectItem';
 
-import { PROJECTS } from '@utils/data';
+import {PROJECTS} from '@utils/data';
 
-import type { IProjectsList } from '@modules/pages/projects/interface';
+import type {IProjectsList} from '@modules/pages/projects/interface';
 
 import s from './Projects.module.scss';
+import Line from "@modules/common/Line";
+import {useMediaQuery} from "@hooks/index";
+import {MOBILE_BREAKPOINT} from "@utils/const";
 
 const Projects: FC = () => {
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
+
+	const LineItem = <li>
+		<Line isStatic={isMobile} />
+	</li>;
+
 	return (
 		<div className={s.container}>
 			<ul className={s.list}>
-				<li>
-					<CurveLine />
-				</li>
+				{LineItem}
 				{PROJECTS.map(
 					(project: IProjectsList) =>
 						project.isVisible && (
 							<Fragment key={project.titleFirstPart}>
 								<ProjectItem project={project} />
-								<li>
-									<CurveLine />
-								</li>
+								{LineItem}
 							</Fragment>
 						),
 				)}

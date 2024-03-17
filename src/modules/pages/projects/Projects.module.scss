@@ -1,8 +1,11 @@
 .container {
 	@include flex(center, center);
-	padding-inline: 170px;
 	position: relative;
 	z-index: 2;
+
+	@include media($laptop-bp, min) {
+		padding-inline: 170px;
+	}
 }
 
 .list {

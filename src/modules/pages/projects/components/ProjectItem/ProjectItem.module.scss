@@ -1,10 +1,4 @@
 .container {
-	//border-top: 2px solid $primary;
-
-	//&:last-of-type {
-	//  border-bottom: 2px solid $primary;
-	//}
-
 	&:hover p {
 		color: $primary;
 		transition: color 0.3s ease-in-out;
@@ -18,12 +12,20 @@
 
 .title {
 	@include font(Neofolia);
-	font-size: clamp(40px, 80px, 80px);
+	font-size: 80px;
 	color: $dark;
 	text-transform: uppercase;
 	transition: color 0.3s ease-in-out;
 
-	&--active {
+	@include media($laptop-bp) {
+		font-size: 70px;
+	}
+
+	@include media($mobile-bp) {
+		font-size: clamp(18px, 30px, 30px);
+	}
+
+	&--separator {
 		margin-right: 18px;
 	}
 }
@@ -35,9 +37,13 @@
 
 	&Image {
 		display: block;
-		width: 210px;
 		height: auto;
-		min-width: 210px;
+		width: min(210px, 210px);
 		margin-inline: 5px;
+
+		@include media($laptop-bp) {
+			width: min(180px, 180px);
+			height: 110px;
+		}
 	}
 }

@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useState } from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 const useMediaQuery = (width: number) => {
-	const [targetReached, setTargetReached] = useState(false);
+	const [targetReached, setTargetReached] = useState<boolean>(false);
 
+	//TODO Replace type any
 	const updateTarget = useCallback((e: any) => {
 		if (e.matches) {
 			setTargetReached(true);

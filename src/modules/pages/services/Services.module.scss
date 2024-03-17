@@ -8,7 +8,6 @@
 	width: 100%;
 	margin-block: 80px 174px;
 	font-size: var(--large);
-	text-align: justify;
 
 	@include media($mobile-bp) {
 		margin-block: 40px;
@@ -26,7 +25,6 @@
 	&Description {
 		max-width: 622px;
 		width: 100%;
-		text-align: justify;
 
 		@include media($mobile-bp) {
 			max-width: unset;
@@ -35,7 +33,6 @@
 }
 
 .offerList {
-	text-align: justify;
 	font-weight: 300;
 	list-style-type: none;
 	margin-top: 6px;
