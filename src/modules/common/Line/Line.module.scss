@@ -1,4 +1,9 @@
 .container {
 	border-color: $primary;
 	height: 2px;
+
+	@include media($mobile-bp) {
+		height: 1px;
+		border-bottom: none;
+	}
 }

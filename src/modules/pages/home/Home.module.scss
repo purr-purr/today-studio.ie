@@ -29,6 +29,10 @@
 	&.fadeRight {
 		padding-right: 250px;
 		transition: padding-right 0.3s ease-out;
+
+		@include media($laptop-bp) {
+			padding-right: 330px;
+		}
 	}
 }
 

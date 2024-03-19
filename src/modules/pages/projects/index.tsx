@@ -8,14 +8,10 @@ import type {IProjectsList} from '@modules/pages/projects/interface';
 
 import s from './Projects.module.scss';
 import Line from "@modules/common/Line";
-import {useMediaQuery} from "@hooks/index";
-import {MOBILE_BREAKPOINT} from "@utils/const";
 
 const Projects: FC = () => {
-	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
-
 	const LineItem = <li>
-		<Line isStatic={isMobile} />
+		<Line />
 	</li>;
 
 	return (

@@ -33,7 +33,7 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 				!isActive && setIsActive(true)
 			}
 			onMouseLeave={() =>
-				!isActive && setIsActive(false)
+				isActive && setIsActive(false)
 			}
 			className={s.container}
 		>
@@ -59,7 +59,10 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 						/>
 					</motion.div>
 				)}
-				<p className={s.title}>{project.titleLastPart}</p>
+				<p className={cn(
+					s.title,
+					project.isWithSeparator && !isActive && s[`title--separator`],
+				)}>{project.titleLastPart}</p>
 			</Link>
 		</li>
 	);

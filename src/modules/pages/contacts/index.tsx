@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
-import CurveLine from '@modules/common/CurveLine';
 import Link from '@modules/common/Link';
 import Title from '@modules/common/Title';
 
-import { COMPANY_INFO } from '@utils/data';
+import {COMPANY_INFO} from '@utils/data';
 
 import s from './Contacts.module.scss';
+import Line from "@modules/common/Line";
 
 const Contacts: FC = () => {
 	const pageTitle = "Let's talk today";
@@ -21,7 +21,7 @@ const Contacts: FC = () => {
 		<article className={s.container}>
 			<Title classname={s.heading} color="primary" text={pageTitle} />
 
-			<CurveLine />
+			<Line />
 
 			<div className={s.links}>
 				<p className={s.description}>{pageDescription}</p>

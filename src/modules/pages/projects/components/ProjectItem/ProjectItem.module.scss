@@ -7,6 +7,7 @@
 
 .link {
 	@include flex(center, center);
+	flex-wrap: wrap;
 	padding-block: 18px;
 }
 
@@ -22,11 +23,25 @@
 	}
 
 	@include media($mobile-bp) {
-		font-size: clamp(18px, 30px, 30px);
+		font-size: 30px;
 	}
 
 	&--separator {
-		margin-right: 18px;
+		&:first-of-type {
+			margin-right: 9px;
+
+			@include media($mobile-bp) {
+				margin-right: 4px;
+			}
+		}
+
+		&:last-of-type {
+			margin-left: 9px;
+
+			@include media($mobile-bp) {
+				margin-left: 4px;
+			}
+		}
 	}
 }
 

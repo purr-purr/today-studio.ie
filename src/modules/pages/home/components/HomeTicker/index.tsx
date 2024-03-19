@@ -1,13 +1,17 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import {FC, useEffect, useRef, useState} from 'react';
 import cn from 'classnames';
 
-import { CATCH_WORDS, COMPANY_INFO } from '@utils/data';
+import {CATCH_WORDS, COMPANY_INFO} from '@utils/data';
 
 import s from './HomeTicker.module.scss';
+import {LAPTOP_BREAKPOINT} from "@utils/const";
+import {useMediaQuery} from "@hooks/index";
 
 const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
+	const isLaptop = useMediaQuery(LAPTOP_BREAKPOINT);
+	const marginTopStep = isLaptop ? 80 : 100;
 	const tickerRef = useRef<HTMLUListElement | null>(null);
-	const [marginTop, setMarginTop] = useState(-100);
+	const [marginTop, setMarginTop] = useState(-marginTopStep);
 	const [currentElement, setCurrentElement] = useState(0);
 	const [triggerTicker, setTriggerTicker] = useState<boolean>(false);
 
@@ -28,7 +32,7 @@ const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 			);
 
 			getNode && ticker.appendChild(getNode);
-			setMarginTop((prev) => prev - 100);
+			setMarginTop((prev) => prev - marginTopStep);
 			setCurrentElement((prev) => prev + 1);
 			ticker.style.marginTop = `${marginTop}px`;
 		}
@@ -52,7 +56,10 @@ const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 	const catchWords = [`${COMPANY_INFO.TYPE.toLowerCase()}`, ...CATCH_WORDS];
 
 	return (
-		<ul ref={tickerRef} className={cn(s.container, isFadeIn && s.fadeIn)}>
+		<ul
+			// ref={tickerRef}
+			className={cn(s.container, isFadeIn && s.fadeIn)}
+		>
 			{catchWords.map((item: string) => (
 				<li key={item}>{item}</li>
 			))}

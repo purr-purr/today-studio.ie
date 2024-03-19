@@ -1,12 +1,11 @@
-import {FC} from 'react';
-
 import s from './Line.module.scss';
 import CurveLine from "@modules/common/CurveLine";
+import {MOBILE_BREAKPOINT} from "@utils/const";
+import {useMediaQuery} from "@hooks/index";
 
-const Line: FC<{
-	isStatic?: boolean;
-}> = ({isStatic = false}) => {
-	return isStatic ? (
+const Line = () => {
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
+	return isMobile ? (
 		<hr className={s.container} />
 	) : <CurveLine />;
 }
