@@ -3,7 +3,7 @@ export const COMPANY_INFO = {
 	TYPE: 'Studio',
 	EMAIL: 'hello@today-studio.ie',
 	LINKEDIN: 'https://www.linkedin.com/company/today-studio-ie/',
-	WHATSAPP: '+353 85 202 27 38',
+	WHATSAPP: 'https://wa.link/rbh0tv',
 };
 
 export const PROJECTS = [
