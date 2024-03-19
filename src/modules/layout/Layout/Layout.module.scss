@@ -21,5 +21,6 @@
 		@include flex($justify: center);
 		flex-direction: column;
 		padding: 75px 16px;
+		min-height: 100%;
 	}
 }

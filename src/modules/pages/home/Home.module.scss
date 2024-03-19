@@ -13,8 +13,8 @@
 		height: 80px;
 	}
 
-	@include media($low-mobile-bp) {
-		height: 36px;
+	@include media($mobile-bp) {
+		overflow-x: hidden;
 	}
 }
 
@@ -26,12 +26,24 @@
 	width: fit-content;
 	transition: padding-right 0.3s ease-out;
 
+	@include media($mobile-bp) {
+		display: flex;
+		flex-direction: column;
+		padding-right: 0;
+		width: 100%;
+		text-align: center;
+	}
+
 	&.fadeRight {
 		padding-right: 250px;
 		transition: padding-right 0.3s ease-out;
 
 		@include media($laptop-bp) {
 			padding-right: 330px;
+		}
+
+		@include media($mobile-bp) {
+			padding-right: 0;
 		}
 	}
 }
@@ -46,12 +58,18 @@
 		font-size: 80px;
 	}
 
-	@include media($low-mobile-bp) {
+	@include media($mobile-bp) {
 		font-size: 36px;
 	}
 
 	&.fadeIn {
 		color: $dark;
 		transition: color 0.4s ease-in;
+
+		@include media($mobile-bp) {
+			background-color: $gray;
+			position: relative;
+			z-index: 1;
+		}
 	}
 }

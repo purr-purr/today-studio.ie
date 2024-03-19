@@ -16,12 +16,14 @@
 	@include media($laptop-bp) {
 		height: 80px;
 		font-size: 32px;
-		top: 27px;
+		top: 9px;
 	}
 
-	@include media($low-mobile-bp) {
-		font-size: 24px;
-		top: -11px;
+	@include media($mobile-bp) {
+		font-size: 19px;
+		text-align: center;
+		top: 36px;
+		width: 100%;
 	}
 
 	&.fadeIn {

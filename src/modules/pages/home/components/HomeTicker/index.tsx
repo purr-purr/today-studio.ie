@@ -4,14 +4,15 @@ import cn from 'classnames';
 import {CATCH_WORDS, COMPANY_INFO} from '@utils/data';
 
 import s from './HomeTicker.module.scss';
-import {LAPTOP_BREAKPOINT} from "@utils/const";
+import {LAPTOP_BREAKPOINT, MOBILE_BREAKPOINT} from "@utils/const";
 import {useMediaQuery} from "@hooks/index";
 
 const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 	const isLaptop = useMediaQuery(LAPTOP_BREAKPOINT);
-	const marginTopStep = isLaptop ? 80 : 100;
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
+	const marginTopStep = isMobile ? 50 : isLaptop ? 80 : 100;
 	const tickerRef = useRef<HTMLUListElement | null>(null);
-	const [marginTop, setMarginTop] = useState(-marginTopStep);
+	const [marginTop, setMarginTop] = useState(0);
 	const [currentElement, setCurrentElement] = useState(0);
 	const [triggerTicker, setTriggerTicker] = useState<boolean>(false);
 
@@ -32,9 +33,9 @@ const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 			);
 
 			getNode && ticker.appendChild(getNode);
-			setMarginTop((prev) => prev - marginTopStep);
+			setMarginTop((prev) => prev + marginTopStep);
 			setCurrentElement((prev) => prev + 1);
-			ticker.style.marginTop = `${marginTop}px`;
+			ticker.style.marginTop = `-${marginTop}px`;
 		}
 	};
 
@@ -56,14 +57,16 @@ const HomeTicker: FC<{ isFadeIn?: boolean }> = ({ isFadeIn }) => {
 	const catchWords = [`${COMPANY_INFO.TYPE.toLowerCase()}`, ...CATCH_WORDS];
 
 	return (
-		<ul
-			// ref={tickerRef}
-			className={cn(s.container, isFadeIn && s.fadeIn)}
-		>
-			{catchWords.map((item: string) => (
-				<li key={item}>{item}</li>
-			))}
-		</ul>
+			<ul
+				ref={tickerRef}
+				className={cn(s.container, isFadeIn && s.fadeIn)}
+				// style={{ marginTop: `-${160 + 80}px` }}
+			>
+				{catchWords.map((item: string) => (
+					<li key={item}>{item}</li>
+				))}
+			</ul>
+
 	);
 };
 
