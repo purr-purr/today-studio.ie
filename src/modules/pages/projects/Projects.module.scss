@@ -2,6 +2,8 @@
 	@include flex(center, center);
 	position: relative;
 	z-index: 2;
+	max-width: 1900px;
+	margin-inline: auto;
 
 	@include media($laptop-bp, min) {
 		padding-inline: 170px;

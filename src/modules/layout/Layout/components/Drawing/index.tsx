@@ -10,22 +10,17 @@ const Drawing = () => {
 	const isLargeScreen = useMediaQuery(1900);
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-	const [isRetina, setIsRetina] = useState<boolean>(false);
+	const [lineWidth, setLineWidth] = useState<number>(0.2);
+	let coords = { x: 0, y: 0 };
 
 	useEffect(() => {
-		const checkRetina = () => {
-			if (window && window.devicePixelRatio && window.devicePixelRatio > 1) {
-				setIsRetina(true);
+			if (window?.devicePixelRatio && window?.devicePixelRatio > 1 || isLargeScreen) {
+				setLineWidth(0.7);
 			} else {
-				setIsRetina(false);
+				setLineWidth(0.2);
 			}
-		};
-
-		checkRetina();
 	}, []);
 
-	const lineWidth = isLargeScreen || isRetina ? 0.5 : 0.2;
-	let coords = { x: 0, y: 0 };
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -95,7 +90,7 @@ const Drawing = () => {
 		return () => {
 			stop();
 		};
-	}, []);
+	}, [lineWidth]);
 
 	return <canvas ref={canvasRef} className={s.container} />;
 };
