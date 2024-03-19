@@ -4,11 +4,12 @@
 
 const nextConfig = {
 	sassOptions: {
-		additionalData: `@import "src/assets/styles/variables.scss"; @import "src/assets/styles/mixins.scss";`,
+		additionalData: `@import "src/assets/styles/variables.scss"; @import "src/assets/styles/mixins.scss";`
 	},
 	images: {
-		unoptimized: true,
+		unoptimized: true
 	},
+	trailingSlash: true
 };
 
 export default nextConfig;
