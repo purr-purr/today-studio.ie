@@ -6,10 +6,6 @@
 .heading {
 	margin-bottom: 216px;
 
-	@include media($laptop-bp) {
-		margin-bottom: 300px;
-	}
-
 	@include media($mobile-bp) {
 		margin-bottom: 60px;
 	}
