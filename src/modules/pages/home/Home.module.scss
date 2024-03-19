@@ -7,14 +7,10 @@
 .inner {
 	width: 100%;
 	height: 120px;
-	overflow-y: hidden;
+	overflow: hidden;
 
 	@include media($laptop-bp) {
 		height: 80px;
-	}
-
-	@include media($mobile-bp) {
-		overflow-x: hidden;
 	}
 }
 
