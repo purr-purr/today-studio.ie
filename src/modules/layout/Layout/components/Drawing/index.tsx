@@ -15,7 +15,7 @@ const Drawing = () => {
 
 	useEffect(() => {
 			if (window?.devicePixelRatio && window?.devicePixelRatio > 1 || isLargeScreen) {
-				setLineWidth(0.7);
+				setLineWidth(0.6);
 			} else {
 				setLineWidth(0.2);
 			}
