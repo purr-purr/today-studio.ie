@@ -89,7 +89,9 @@ export const PROJECTS = [
 export const CATCH_WORDS = [
 	'will be sunny',
 	'brings possibilities',
-	'time to improve your business',
-	'the best day for change',
-	'we have solution',
+	'we bring your ideas to life',
+	'we have the solution',
+	'improve your business',
+	'is the best day for changes',
+	'promises solutions',
 ];
