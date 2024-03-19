@@ -14,7 +14,7 @@ const Contacts: FC = () => {
 		"Get in touch to kickstart your digital journey. Let's build something remarkable together!";
 	const contactsList = [
 		{ title: 'Start a project', link: `mailto:${COMPANY_INFO.EMAIL}` },
-		{ title: 'Connect via WhatsApp', link: `tel:${COMPANY_INFO.WHATSAPP}` },
+		{ title: 'Connect via WhatsApp', link: `${COMPANY_INFO.WHATSAPP}` },
 		{ title: 'Check our LinkedIn', link: COMPANY_INFO.LINKEDIN },
 	];
 	return (
