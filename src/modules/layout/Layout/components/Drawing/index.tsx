@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
+import {useEffect, useRef, useState} from 'react';
+import {useRouter} from 'next/router';
 
-import { useMediaQuery } from '@hooks/index';
+import {useMediaQuery} from '@hooks/index';
 
 import s from './Drawing.module.scss';
 
@@ -10,7 +10,21 @@ const Drawing = () => {
 	const isLargeScreen = useMediaQuery(1900);
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-	const lineWidth = isLargeScreen ? 0.5 : 0.2;
+	const [isRetina, setIsRetina] = useState<boolean>(false);
+
+	useEffect(() => {
+		const checkRetina = () => {
+			if (window && window.devicePixelRatio && window.devicePixelRatio > 1) {
+				setIsRetina(true);
+			} else {
+				setIsRetina(false);
+			}
+		};
+
+		checkRetina();
+	}, []);
+
+	const lineWidth = isLargeScreen || isRetina ? 0.5 : 0.2;
 	let coords = { x: 0, y: 0 };
 
 	useEffect(() => {
