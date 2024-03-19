@@ -75,14 +75,14 @@ export const PROJECTS = [
 		isWithSeparator: true,
 		titleFirstPart: 'bfuwwt',
 		titleLastPart: 'fund',
-		link: 'https://bfuwwt.com.ua/',
+		link: 'https://purr-purr.github.io/bfuwwt.com.ua/',
 	},
 	{
 		isVisible: true,
 		isWithSeparator: true,
 		titleFirstPart: 'whih',
 		titleLastPart: 'fund',
-		link: 'https://whih.com.ua/index_en.html',
+		link: 'https://purr-purr.github.io/whih.com.ua/',
 	},
 ];
 
