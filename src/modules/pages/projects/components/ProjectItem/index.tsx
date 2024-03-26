@@ -37,7 +37,7 @@ const ProjectItem: FC<{ project: IProjectsList }> = ({ project }) => {
 			}
 			className={s.container}
 		>
-			<Link href={project.link} className={s.link}>
+			<Link href={project.link} className={s.link} target="_blank">
 				<p
 					className={cn(
 						s.title,
