@@ -52,6 +52,8 @@ jobs:
         with:
           name: out
           path: out
+      - name: Set up .env variables
+        run: echo "NEXT_PUBLIC_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID }}" >> $GITHUB_ENV
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
