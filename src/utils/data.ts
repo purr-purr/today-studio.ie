@@ -9,6 +9,13 @@ export const COMPANY_INFO = {
 export const PROJECTS = [
 	{
 		isVisible: true,
+		isWithSeparator: true,
+		titleFirstPart: 'roct',
+		titleLastPart: 'fund',
+		link: 'https://roct.com.ua/',
+	},
+	{
+		isVisible: true,
 		isWithSeparator: false,
 		titleFirstPart: 'ten',
 		titleLastPart: 'lait',
